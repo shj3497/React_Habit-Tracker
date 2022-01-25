@@ -32,11 +32,20 @@ button {
   border-radius: 50%;
 }
 
-.add-input {
-  font-size: 2rem;
+.habitContainer {
+  padding: 10px;
+}
+
+.add-form {
+  display: flex;
+  align-items: center;
 }
 
 .add-input {
+  font-size: 1rem;
+  width: 333px;
+  height: 37px;
+  padding: 0;
   margin-right: 0.2em;
 }
 

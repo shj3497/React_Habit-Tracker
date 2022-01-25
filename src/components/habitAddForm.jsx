@@ -1,33 +1,31 @@
-import React, {memo} from 'react'
+import React, { memo } from "react";
 
 const HabitAddForm = memo((props) => {
-      
-  const inputRef = React.createRef();
+  const inputRef = React.useRef();
 
-
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     // console.log(this.inputRef.current.value);
     const name = inputRef.current.value;
     // name && this.props.onAdd(name);
-    
-    if(name !== ''){
+
+    if (name !== "") {
       props.onAdd(name);
     }
-    inputRef.current.value = '';
-  }
+    inputRef.current.value = "";
+  };
 
-  
   return (
-    <form className="add=form" onSubmit={onSubmit}>
-      <input 
+    <form className="add-form" onSubmit={onSubmit}>
+      <input
         ref={inputRef}
-        type="text" 
-        className="add-input" 
-        placeholder="Please enter in your habit"/>
+        type="text"
+        className="add-input"
+        placeholder="Please enter in your habit"
+      />
       <button className="add-button">Add</button>
     </form>
-  )
+  );
 });
 
 export default HabitAddForm;
@@ -40,13 +38,12 @@ export default HabitAddForm;
 //   // 원하는 요소에 ref={this.inputRef}를 사용하면 동일한 기능을 한다.
 //   inputRef = React.createRef();
 
-
 //   onSubmit = event => {
 //     event.preventDefault();
 //     // console.log(this.inputRef.current.value);
 //     const name = this.inputRef.current.value;
 //     // name && this.props.onAdd(name);
-    
+
 //     if(name !== ''){
 //       this.props.onAdd(name);
 //     }
@@ -57,10 +54,10 @@ export default HabitAddForm;
 //     // console.log('Habit')
 //     return (
 //       <form className="add=form" onSubmit={this.onSubmit}>
-//         <input 
+//         <input
 //           ref={this.inputRef}
-//           type="text" 
-//           className="add-input" 
+//           type="text"
+//           className="add-input"
 //           placeholder="Please enter in your habit"/>
 //         <button className="add-button">Add</button>
 //       </form>
